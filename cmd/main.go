@@ -2,41 +2,20 @@ package main
 
 import (
 	"fmt"
-	"io"
 	"os"
+
+	"github.com/TulgaCG/catgo/pkg/file"
+)
+
+const (
+	bufferSize uint = 1024
 )
 
 func main() {
 	fileNames := os.Args[1:]
 
-	readBuffer(fileNames, 1024)
-}
-
-func readBuffer(fileNames []string, bufferSize int) error {
-
-	for _, fileName := range fileNames {
-		file, err := os.Open(fileName)
-		if err != nil {
-			return fmt.Errorf("file could not be opened: %w", err)
-		}
-		defer file.Close()
-
-		buffer := make([]byte, bufferSize)
-
-		for {
-			bytesRead, err := file.Read(buffer)
-
-			if err != nil {
-				if err != io.EOF {
-					return fmt.Errorf("error occured while reading file %s: %w", fileName, err)
-				}
-
-				break
-			}
-
-			fmt.Print(string(buffer[:bytesRead]))
-		}
+	if err := file.Fprint(os.Stdout, bufferSize, fileNames...); err != nil {
+		fmt.Fprintf(os.Stderr, "%s\n", err.Error())
+		os.Exit(1)
 	}
-
-	return nil
 }
