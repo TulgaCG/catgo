@@ -1,5 +1,5 @@
 .PHONY: build
-build: deps compile
+build: deps compile test install
 
 .PHONY: deps
 deps:
@@ -7,4 +7,12 @@ deps:
 
 .PHONY: compile
 compile:
-	@ go build -o bin/catgo cmd/main.go
+	@ go build -o bin/catgo cmd/catgo/main.go
+
+.PHONY: install
+install:
+	go install ./cmd/catgo
+
+.PHONY: test
+test:
+	go test ./...
