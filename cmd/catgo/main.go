@@ -1,20 +1,19 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"os"
 
 	"github.com/TulgaCG/catgo/pkg/file"
 )
 
-const (
-	bufferSize uint = 1024
-)
-
 func main() {
-	fileNames := os.Args[1:]
+	bufferSize := flag.Uint("buffer-size", 32, "buffer size used to read files")
+	flag.Parse()
 
-	if err := file.Fprint(os.Stdout, bufferSize, fileNames...); err != nil {
+	fileNames := flag.Args()
+	if err := file.Fprint(os.Stdout, *bufferSize, fileNames...); err != nil {
 		fmt.Fprintf(os.Stderr, "%s\n", err.Error())
 		os.Exit(1)
 	}
