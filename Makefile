@@ -1,5 +1,5 @@
 .PHONY: build
-build: deps compile test install
+build: deps lint compile test install
 
 .PHONY: deps
 deps:
@@ -16,3 +16,7 @@ install:
 .PHONY: test
 test:
 	go test ./...
+
+.PHONY: lint
+lint:
+	golangci-lint run --config=.golangci.yaml --fix
