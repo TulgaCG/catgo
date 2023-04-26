@@ -8,8 +8,12 @@ import (
 	"github.com/TulgaCG/catgo/pkg/file"
 )
 
+const (
+	defaultBufferSize uint = 32
+)
+
 func main() {
-	bufferSize := flag.Uint("buffer-size", 32, "buffer size used to read files")
+	bufferSize := flag.Uint("buffer-size", defaultBufferSize, "buffer size used to read files")
 	flag.Parse()
 
 	fileNames := flag.Args()

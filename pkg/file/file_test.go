@@ -7,8 +7,9 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/TulgaCG/catgo/pkg/file"
 	"github.com/stretchr/testify/require"
+
+	"github.com/TulgaCG/catgo/pkg/file"
 )
 
 func TestFprint(t *testing.T) {
