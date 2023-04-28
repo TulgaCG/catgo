@@ -12,6 +12,7 @@ $ catgo file1.txt file2.txt
 This will output the contents of `file1.txt` and `file2.txt` to the terminal.
 
 ### Flags
+
 ```bash
 Usage of catgo:
   -buffer-size uint
