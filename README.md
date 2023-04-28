@@ -1,10 +1,9 @@
 # Catgo
 Catgo is a simple command-line interface (CLI) app written in Go. It is a project that I developed to practice my Golang skills. The aim of Catgo is to replicate the basic functionality of the standard Unix `cat` utility, which reads files sequentially and writes them to standard output (stdout).
 
-## Usage
+## CLI Usage
 To use catgo, you can download the binary from the releases page and run it directly in your terminal. Alternatively, you can install the catgo package and use it in your own Go projects.
 
-Command-Line Interface
 Here's an example of how to use catgo from the command line:
 
 ```bash
@@ -13,7 +12,12 @@ $ catgo file1.txt file2.txt
 This will output the contents of `file1.txt` and `file2.txt` to the terminal.
 
 ### Flags
-- `-buffer-size`: changes the buffer size used for reading files. The default buffer size is **32**.
+
+```bash
+Usage of catgo:
+  -buffer-size uint
+    	buffer size used to read files (default 32)
+```
 
 Here's an example of how to use the buffer-size flag:
 
