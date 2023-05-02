@@ -30,7 +30,7 @@ This will output the contents of `file1.txt` to the terminal, using a buffer siz
 To use the catgo package in your own Go projects, you can install it using the following command:
 
 ```bash
-$ go install github.com/TulgaCG/catgo/cmd/catgo@latest
+$ go get github.com/TulgaCG/catgo/cmd/catgo@latest
 ```
 Then, you can import the package in your Go code:
 
