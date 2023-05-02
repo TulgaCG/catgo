@@ -30,7 +30,7 @@ This will output the contents of `file1.txt` to the terminal, using a buffer siz
 To use the catgo package in your own Go projects, you can install it using the following command:
 
 ```bash
-$ go get github.com/TulgaCG/catgo/cmd/catgo@latest
+$ go get github.com/TulgaCG/catgo/pkg/file
 ```
 Then, you can import the package in your Go code:
 
@@ -59,7 +59,7 @@ func main(){
 This code will read the contents of `file1.txt` and `file2.txt` using a buffer size of 64 bytes, and output them to the terminal. If there is an error reading a file, it will be printed to the terminal instead.
 
 ## License
-Catgo is licensed under the Apache-2.0 License. Please see the [LICENSE](https://github.com/TulgaCG/catgo/blob/main/LICENSE) file for more information.
+Catgo is licensed under the Apache-2.0 License. Please see the [LICENSE](https://github.com/TulgaCG/catgo/blob/main/LICENSEg) file for more information.
 
 ## Contributing
 As this project is solely for my own learning purposes, I am not currently accepting contributions from external sources. However, if you have any suggestions or feedback, feel free to open an issue on the project's [GitHub page](https://github.com/TulgaCG/catgo).
